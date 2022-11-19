@@ -10,6 +10,8 @@
 /* 300 , 400, 500, 700 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 /* font-family: 'Montserrat', sans-serif; */
+$hamburger_fontweight : 700;
+$hamburger_texttitle : 2em;
 body{
   font-family: 'Pretendard-Regular','Montserrat', sans-serif;
   font-size: 16px;
@@ -24,6 +26,9 @@ i{
 }
 // header
 header{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 nav{
   width: 100%;
@@ -33,7 +38,8 @@ nav{
   justify-content: space-between;
   align-items: center;
   position: fixed;
-
+  z-index: 99999;
+  background-color: white;
 }
 .nav_menu{
   text-align: center;
@@ -44,7 +50,7 @@ nav{
     align-items: center;
     width: 500px;
     height: 100%;
-    z-index: 9999;
+    z-index: 99999;
     >li{
       width: calc(100%/4);
       height: 100%;
@@ -52,7 +58,7 @@ nav{
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
+      z-index: 99999;
       &:first-child {
         margin-left: 0;
       }
@@ -65,7 +71,7 @@ a:hover{
 .nav_back{
   width: 100%;
   height: 400px;
-  background-color: coral;
+  background-color: #b6a5d1;
   position: fixed;
   z-index: 9997;
   top: 100px;
@@ -136,15 +142,16 @@ a:hover{
   left: 0;
   z-index: 99999;
   background-color: white;
-  padding: 100px 80px;
+  display: none;
   >div{
     flex: 1 1 50%;
-    background-color: green;
   }
 }
 .hamburgerleft{
+  background-color: #feecbc;
+  padding: 100px 0 0 80px;
   h2{
-    font-size: 2em;
+    font-size: $hamburger_texttitle;
     margin-bottom: 70px;
   }
 
@@ -155,7 +162,7 @@ a:hover{
   margin-left: 25px;
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: $hamburger_fontweight;
   span{
     font-size: 1.5em;
     margin: 0 10px;
@@ -165,22 +172,179 @@ a:hover{
   & span:nth-of-type(2){
     width: 160px;
     height: 2px;
-    background-color: white;
+    background-color: black;
     display: none;
   }
   & span:nth-of-type(3){
-    border: 1px solid white;
+    border: 1px solid black;
     padding: .5em .7em;
     border-radius: 1em;
     display: none;
+  }
+}
+.hamburgerright{
+  width: 100%;
+  height: 100%;
+  div:first-child{
+    padding-top: 200px;
+  }
+}
+.hamburger_menu{
+  display: flex;
+  align-items: stretch;
+  margin-top: 2em;
+  margin-left: 1em;
+  h2{
+    width: 200px;
+    font-size: $hamburger_texttitle;
+    font-weight: $hamburger_fontweight;
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    li{
+     margin-left: 2em;
+     padding: .5em 0;
+    }
   }
 }
 .hamburgerclose{
   position: absolute;
   top: 0;
   right: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #feecbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  i{
+    font-size: 70px;
+    color: white;
+  }
+}
+// swiper
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  top: 100px;
+    position: relative;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+
+}
+
+.swiper-slide img {
+  position: absolute;
+  width: 100%;
+  top: 10%;
+}
+.swiper-button-next{
+  margin-right: 100px;
+}
+.swiper-button-prev{
+  margin-left: 100px;
 }
 // main
+main{
+  h2{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2em;
+    font-size: 3em;
+    font-weight: $hamburger_fontweight;
+  }
+}
+// swiper2
+// 중복 스와이퍼 제외하기
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.mySwiper2{
+  top: 0;
+  width: 100%;
+  height: 500px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.slide_box{
+  position: relative;
+}
+.slide_boxleft{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 600px;
+  height: 400px;
+  padding: 2em;
+  background-color: darkblue;
+  color: white;
+  border-radius: 3em 0 3em 0;
+  position: absolute;
+  top: 100px;
+  left: 0;
+:first-child{
+  font-size: $hamburger_texttitle;
+  font-weight: $hamburger_fontweight;
+}
+}
+.slide_boxright{
+  background-color: green;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  border-radius: 3em 0 3em 0;
+  width: 600px;
+  height: 400px;
+}
+.swiper-slide-active .slide_boxleft{
+  animation: boxmove .8s linear both;
+  animation-delay: .5s;
+}
+.swiper-slide-active .slide_boxright{
+  animation: boxmove2 .8s linear both;
+  animation-delay: .5s;
+}
+@keyframes boxmove{
+  from{
+    top: 100px;
+  }
+  to{
+    top: 0;
+  }
+}
+@keyframes boxmove2{
+  from{
+    left: 0;
+  }
+  to{
+    left: 500px;
+  }
+}
 section{
   height: 100vh;
 }

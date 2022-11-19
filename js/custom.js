@@ -15,3 +15,12 @@ $('.hamburgerleft_text').mouseleave(function(){
 $(this).children().eq(1).css('display','none');
 $(this).children().eq(2).css('display','none');
 });
+//hamburger open
+$('.nav_hamburger').click(function(){
+  $('.header_hamburgerBack').fadeIn();
+  $('.header_hamburgerBack').css('display','flex');
+})
+//hamburger close
+$('.hamburgerclose').click(function(){
+  $('.header_hamburgerBack').fadeOut();
+})

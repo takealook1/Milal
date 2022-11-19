@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="css/style.css">
   <!--fontAwesome 4.7 CDN-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Link Swiper's CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
+
 </head>
 <body>
   <div class="wrap">
@@ -88,20 +94,136 @@
             <span>밀알복지관 봉사안내</span>
           </div>
         </div>
-        <div class="hamburgerright"></div>
-        <div class="hamburgerclose"></div>
+        <div class="hamburgerright">
+          <div class="hamburger_menu">
+          <h2><a href="#none">사업소개</a></h2>
+          <ul>
+            <li><a href="#none">이용안내</a></li>
+            <li><a href="#none">이해하기쉬운복지관안내서</a></li>
+          </ul>
+          </div>
+          <div class="hamburger_menu">
+          <h2><a href="#none">게시판</a></h2>
+          <ul>
+            <li><a href="#none">공지사항</a></li>
+            <li><a href="#none">채용공고</a></li>
+            <li><a href="#none">밀알이야기</a></li>
+            <li><a href="#none">복지관 영상</a></li>
+            <li><a href="#none">자료실 및 복지관 뉴스</a></li>
+            <li><a href="#none">언론 속 복지관</a></li>
+            <li><a href="#none">복지관 일정</a></li>
+            <li><a href="#none">식단표</a></li>
+            <li><a href="#none">소식지 & 홍보지</a></li>
+            <li><a href="#none">복지관에 바란다</a></li>
+              </ul>
+              </div>
+              <div class="hamburger_menu">
+              <h2><a href="#none">복지관소개</a></h2>
+            <ul>
+              <li><a href="#none">밀알복지관</a></li>
+              <li><a href="#none">사회복지 법인 밀알</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="hamburgerclose">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
       </div>
+      <!-- Swiper -->
+
+ <div class="swiper mySwiper">
+   <div class="swiper-wrapper">
+     <div class="swiper-slide">
+       <img src="image/swiper_bg1.png" />
+     </div>
+     <div class="swiper-slide">
+       <img src="image/swiper_bg2.png" />
+     </div>
+     <div class="swiper-slide">
+      <img src="image/swiper_bg3.png" />
+     </div>
+   </div>
+   <div class="swiper-button-next"></div>
+   <div class="swiper-button-prev"></div>
+
+ </div>
+
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+   var swiper = new Swiper(".mySwiper", {
+     spaceBetween: 30,
+     effect: "fade",
+     loop: true,
+     autoplay: {
+       delay: 2500,
+     },
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+   });
+   </script>
     </header>
     <!-- main -->
     <main>
+    <h2>복지관 소식</h2>
+    <!-- Swiper2 -->
 
+<div class="swiper mySwiper2">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide slide_box">
+      <div class="slide_boxleft">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet. &nbsp &nbsp--></p>
+      </div>
+      <div class="slide_boxright">
+        <img src="" alt="이미지">
+      </div>
+    </div>
+    <div class="swiper-slide slide_box">
+      <div class="slide_boxleft">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet. &nbsp &nbsp--></p>
+      </div>
+      <div class="slide_boxright">
+        <img src="" alt="이미지">
+      </div>
+    </div>
+    <div class="swiper-slide slide_box">Slide 3</div>
+    <div class="swiper-slide slide_box">Slide 4</div>
+    <div class="swiper-slide slide_box">Slide 5</div>
+    <div class="swiper-slide slide_box">Slide 6</div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+  var swiper = new Swiper(".mySwiper2", {
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true,
+  });
+</script>
     </main>
-    <section>
-
-    </section>
-    <section>
-
-    </section>
+<section></section>
   </div>
 </body>
 <!-- jquery -->
